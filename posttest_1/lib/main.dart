@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,29 +28,38 @@ class MainPage extends StatelessWidget {
         title: const Text("Posttest 1 Vauwez Sam El Fareez"),
       ),
       body: Container(
-        // transform: Matrix4.rotationZ(0.1),
         width: lebar,
         height: tinggi,
         alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: Colors.indigo,
-          border: Border.all(
-            width: 3,
-            color: Colors.black,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/androidparty.png'),
+            fit: BoxFit.fitHeight,
           ),
         ), 
-        child: const Text(
-          "Supreme",
-          style: TextStyle(
-            fontSize: 25,
-            fontFamily: "Futura",
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            backgroundColor: Colors.red,
-          ),
-          // textAlign: ,
-        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+              Text(
+                  "Happy Birthday",
+                  style: TextStyle(
+                    fontSize: 25,
+                    backgroundColor: Colors.white,
+                    fontFamily: "Futura",
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.bold,
+                  )
+              ),
+              SizedBox(
+                height: 600,
+                width: 200,
+                ),
+              Text(
+                "From Me",
+                style: TextStyle(fontSize: 20),
+              ),
+          ],
+        )
       )
     );
   }
