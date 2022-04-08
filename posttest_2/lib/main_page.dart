@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart'; 
 
 Widget inputText(String label, String hint) {
@@ -27,7 +25,7 @@ class MainPage extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/medical_bg.png"),
               fit: BoxFit.fitHeight,
@@ -40,10 +38,12 @@ class MainPage extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            title: Text(
+            title: const Text(
               "Praktek dr. S. Strange",
               style: TextStyle(
                 color: Color(0xff9d9c62),
+                fontWeight: FontWeight.w700,
+                fontSize: 24,
               ),
             ),
           ),
@@ -51,25 +51,65 @@ class MainPage extends StatelessWidget {
           body: Container(
             width: lebarDevice,
             height: tinggiDevice,
-            margin: EdgeInsets.symmetric(horizontal: 17),
+            margin: const EdgeInsets.symmetric(horizontal: 17),
             child: ListView(
               children: [
-                Text("Halo, Vauwez Sam El Fareez"),
-                Text("Silahkan tunggu giliran Anda"),
+                const Text(
+                  "Halo, Vauwez Sam El Fareez",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 13,
+                    color: Color(0xff9d9c62),
+                  ),
+                ),
+                const Text(
+                  "Silahkan tunggu giliran Anda",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                    color: Color(0xff9d9c62),
+                  )
+                ),
                 Row(
                   children: [
                     Container(
+                      alignment: Alignment.center,
                       width: 67,
                       height: 67,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         color: Color(0xfff0f66e)
                       ),
+                      child: const Text(
+                        "12",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          fontSize: 24,
+                          color: Color(0xff9d9c62),
+                        ),
+                      ) ,
                     ),
-                    Text("pasien lagi")
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Text(
+                      "pasien lagi",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: Color(0xff9d9c62),
+                      ),
+                    )
                   ],
                 ),
-                Text("Isikan Data Diri Anda"),
+                const Text(
+                  "Isikan Data Diri Anda",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Color(0xff9d9c62)
+                  ),
+                ),
                 inputText("Nama", "Nama lengkap"),
                 inputText("Umur", "2009106054"),
                 inputText("Alamat", "Jl. Kedamaian, No. 28"),
