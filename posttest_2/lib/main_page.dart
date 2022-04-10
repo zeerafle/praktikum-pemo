@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 Widget inputText(String label, String hint) {
   return Container(
-    child: TextField(
+    padding: const EdgeInsets.symmetric(vertical: 9),
+    child: const TextField(
       decoration: InputDecoration(
           border: UnderlineInputBorder(borderRadius: BorderRadius.circular(15)),
           fillColor: Colors.white,
@@ -16,7 +17,6 @@ Widget inputText(String label, String hint) {
         fontSize: 12,
       ),
     ),
-    padding: EdgeInsets.symmetric(vertical: 9),
   );
 }
 
@@ -86,8 +86,9 @@ class MainPage extends StatelessWidget {
                         width: 67,
                         height: 67,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Color(0xfff0f66e)),
+                          borderRadius: BorderRadius.circular(15),
+                          color: const Color(0xfff0f66e)
+                        ),
                         child: const Text(
                           "12",
                           style: TextStyle(
@@ -126,16 +127,19 @@ class MainPage extends StatelessWidget {
                   inputText("Nama", "Nama lengkap"),
                   inputText("Umur", "2009106054"),
                   inputText("Alamat", "Jl. Kedamaian, No. 28"),
+                  inputText("Nomor BPJS", "00320021"),
                   inputText("Alergi Jenis Obat", "sulva"),
                   inputText("Keluhan", "demam, batuk, pilek selama tiga hari"),
+                  inputText("Antrian Kustom", "nomor harus lebih besar dari jumlah pasien tunggu"),
                   Container(
                     width: 219,
                     height: 55,
                     decoration: BoxDecoration(
-                        color: Color(0xfff0f66e),
-                        borderRadius: BorderRadius.circular(15)),
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    margin: EdgeInsets.symmetric(vertical: 15),
+                      color: const Color(0xfff0f66e),
+                      borderRadius: BorderRadius.circular(15)
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    margin: const EdgeInsets.symmetric(vertical: 15),
                     alignment: Alignment.center,
                     child: const Text(
                       "Antri Sekarang",
