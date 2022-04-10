@@ -1,18 +1,19 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 Widget inputText(String label, String hint) {
   return Container(
     padding: const EdgeInsets.symmetric(vertical: 9),
-    child: const TextField(
+    child: TextField(
       decoration: InputDecoration(
-          border: UnderlineInputBorder(borderRadius: BorderRadius.circular(15)),
+          border: UnderlineInputBorder(
+              borderRadius: BorderRadius.circular(15),
+          ),
           fillColor: Colors.white,
           filled: true,
           labelText: label,
-          hintText: hint),
-      style: TextStyle(
+          hintText: hint
+      ),
+      style: const TextStyle(
         fontFamily: "PoppinsMedium",
         fontSize: 12,
       ),
