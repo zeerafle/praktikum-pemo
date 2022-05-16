@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:postest5_2009106054_vauwez/custom_alert.dart';
 
 Widget inputText(String label, String hint, TextEditingController controller) {
   return Container(
@@ -57,13 +58,13 @@ class _FormPageState extends State<FormPage> {
           ),
         ),
         Scaffold(
-          backgroundColor: Color(0xfff0f8ea),
+          backgroundColor: const Color(0xfff0f8ea),
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            iconTheme: IconThemeData(color: Color(0xff333333)),
+            iconTheme: const IconThemeData(color: Color(0xff333333)),
           ),
-          body: ListView(padding: EdgeInsets.all(17), children: [
+          body: ListView(padding: const EdgeInsets.all(17), children: [
             const SizedBox(
               height: 30,
             ),
@@ -149,11 +150,14 @@ class _FormPageState extends State<FormPage> {
                   bpjs = bpjsController.text;
                   alergiObat = alergiObatController.text;
                   keluhan = keluhanController.text;
+
+                  CustomAlert(
+                      context, nama, umur, alamat, bpjs, alergiObat, keluhan);
                 });
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(219, 55),
-                primary: Color(0xfff0f66e),
+                primary: const Color(0xfff0f66e),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
               ),
@@ -168,4 +172,3 @@ class _FormPageState extends State<FormPage> {
     );
   }
 }
-
