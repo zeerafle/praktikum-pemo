@@ -1,21 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:postest5_2009106054_vauwez/form_page.dart';
 
-class DrChristinePalmer extends StatelessWidget {
-  const DrChristinePalmer({Key? key}) : super(key: key);
+class DetailPage extends StatelessWidget {
+  const DetailPage(
+      {Key? key,
+      required this.pathFoto,
+      required this.nama,
+      required this.jabatan,
+      required this.alamat,
+      required this.tentang,
+      required this.jumlahPasien,
+      required this.tahunMengabdi,
+      required this.resepObat})
+      : super(key: key);
+
+  final String pathFoto;
+  final String nama;
+  final String jabatan;
+  final String alamat;
+  final String tentang;
+  final String jumlahPasien;
+  final String tahunMengabdi;
+  final String resepObat;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xfff0f8ea),
+        backgroundColor: const Color(0xfff0f8ea),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          iconTheme: IconThemeData(color: Color(0xff333333)),
+          iconTheme: const IconThemeData(color: Color(0xff333333)),
         ),
         extendBodyBehindAppBar: true,
         body: Stack(
           children: [
-            Image.asset("assets/dr_christine_palmer_square.png"),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              /* decoration: BoxDecoration( */
+              /*     image: DecorationImage( */
+              /*   image: AssetImage(pathFoto), */
+              /*   fit: BoxFit.fitWidth, */
+              child: Image.asset(pathFoto, fit: BoxFit.fitWidth),
+            ),
+            /* Image.asset(pathFoto, fit: BoxFit.), */
             ListView(
               children: [
                 SizedBox(
@@ -25,7 +53,7 @@ class DrChristinePalmer extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                         FittedBox(
@@ -48,7 +76,13 @@ class DrChristinePalmer extends StatelessWidget {
                                               fontSize: 13,
                                               color: Color(0xff333333))),
                                       TextButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (_) =>
+                                                        FormPage()));
+                                          },
                                           child: Text("Antri sekarang",
                                               style: TextStyle(
                                                   color: Color(0xffe4572e),
@@ -62,8 +96,7 @@ class DrChristinePalmer extends StatelessWidget {
                                             fontFamily: "PoppinsRegular",
                                             fontSize: 11,
                                             color: Color(0xff333333)),
-                                        text:
-                                            "Dokter Christine Palmer adalah seorang ahli bedah di Rumah Sakit Umum Metro dan mantan rekan Stephen. Dia adalah pacar Strange sampa mereka putus akrena kepribadian Strange yang egois, tetapi masih tetap berteman. Dia membantu Strange setelah kecelakaannya meninggalkannya tanpa menggunakan tangannya sampai dia tidak bisa lagi melihat Strange menghancurkan hidupnya."),
+                                        text: tentang),
                                     textAlign: TextAlign.left,
                                   ),
                                   SizedBox(height: 11),
@@ -90,7 +123,7 @@ class DrChristinePalmer extends StatelessWidget {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  "578",
+                                                  jumlahPasien,
                                                   style: TextStyle(
                                                       color: Color(0xff333333),
                                                       fontSize: 15),
@@ -115,7 +148,7 @@ class DrChristinePalmer extends StatelessWidget {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  "10",
+                                                  tahunMengabdi,
                                                   style: TextStyle(
                                                       color: Color(0xff333333),
                                                       fontSize: 15),
@@ -141,7 +174,7 @@ class DrChristinePalmer extends StatelessWidget {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  "1028",
+                                                  resepObat,
                                                   style: TextStyle(
                                                       color: Color(0xff333333),
                                                       fontSize: 15),
@@ -203,19 +236,19 @@ class DrChristinePalmer extends StatelessWidget {
                         padding: EdgeInsets.all(13),
                         child: Column(children: [
                           Text(
-                            "dr. Christine Palmer",
+                            nama,
                             style: TextStyle(
                               fontFamily: "PoppinsBold",
                               fontSize: 20,
                               color: Colors.white,
                             ),
                           ),
-                          Text("Dokter umum",
+                          Text(jabatan,
                               style: TextStyle(
                                   fontFamily: "PoppinsRegular",
                                   fontSize: 13,
                                   color: Colors.white)),
-                          Text("Rumah Sakit Metro-General",
+                          Text(alamat,
                               style: TextStyle(
                                   fontFamily: "PoppinsRegular",
                                   fontSize: 13,
