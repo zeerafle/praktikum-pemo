@@ -150,10 +150,10 @@ class _FormPageState extends State<FormPage> {
                   bpjs = bpjsController.text;
                   alergiObat = alergiObatController.text;
                   keluhan = keluhanController.text;
-
-                  CustomAlert(
-                      context, nama, umur, alamat, bpjs, alergiObat, keluhan);
                 });
+
+                CustomAlert(
+                    context, nama, umur, alamat, bpjs, alergiObat, keluhan);
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(219, 55),
