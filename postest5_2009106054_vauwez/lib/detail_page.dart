@@ -58,22 +58,12 @@ class DrChristinePalmer extends StatelessWidget {
                                   ),
                                   RichText(
                                     text: TextSpan(
-                                      style: TextStyle(
-                                          fontFamily: "PoppinsRegular",
-                                          fontSize: 11,
-                                          color: Color(0xff333333)),
-                                      children: const <TextSpan>[
-                                        TextSpan(
-                                            text:
-                                                "Dokter Christine Palmer adalah seorang ahli bedah di Rumah Sakit Umum Metro dan mantan rekan Stephen."),
-                                        TextSpan(
-                                            text:
-                                                " Dia adalah pacar Strange sampa mereka putus akrena kepribadian Strange yang egois, tetapi masih tetap berteman. "),
-                                        TextSpan(
-                                            text:
-                                                "Dia membantu Strange setelah kecelakaannya meninggalkannya tanpa menggunakan tangannya sampai dia tidak bisa lagi melihat Strange menghancurkan hidupnya."),
-                                      ],
-                                    ),
+                                        style: TextStyle(
+                                            fontFamily: "PoppinsRegular",
+                                            fontSize: 11,
+                                            color: Color(0xff333333)),
+                                        text:
+                                            "Dokter Christine Palmer adalah seorang ahli bedah di Rumah Sakit Umum Metro dan mantan rekan Stephen. Dia adalah pacar Strange sampa mereka putus akrena kepribadian Strange yang egois, tetapi masih tetap berteman. Dia membantu Strange setelah kecelakaannya meninggalkannya tanpa menggunakan tangannya sampai dia tidak bisa lagi melihat Strange menghancurkan hidupnya."),
                                     textAlign: TextAlign.left,
                                   ),
                                   SizedBox(height: 11),
@@ -188,111 +178,14 @@ class DrChristinePalmer extends StatelessWidget {
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Container(
-                                          height: 68,
-                                          width: 49,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Min",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 13)),
-                                              Text("2",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 16))
-                                            ],
-                                          )),
-                                      Container(
-                                          height: 68,
-                                          width: 49,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Sen",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 13)),
-                                              Text("3",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 16))
-                                            ],
-                                          )),
-                                      Container(
-                                          height: 68,
-                                          width: 49,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Sel",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 13)),
-                                              Text("4",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 16))
-                                            ],
-                                          )),
-                                      Container(
-                                          height: 68,
-                                          width: 49,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Rab",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 13)),
-                                              Text("5",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 16))
-                                            ],
-                                          )),
-                                      Container(
-                                          height: 68,
-                                          width: 49,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(15)),
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              Text("Kam",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 13)),
-                                              Text("6",
-                                                  style: TextStyle(
-                                                      color: Color(0xff333333),
-                                                      fontSize: 16))
-                                            ],
-                                          )),
+                                      AntriContainer(hari: "Min", tanggal: "2"),
+                                      AntriContainer(hari: "Sen", tanggal: "3"),
+                                      AntriContainer(
+                                          isActive: true,
+                                          hari: "Sel",
+                                          tanggal: "4"),
+                                      AntriContainer(hari: "Rab", tanggal: "5"),
+                                      AntriContainer(hari: "Kam", tanggal: "6"),
                                     ],
                                   )
                                 ],
@@ -334,6 +227,38 @@ class DrChristinePalmer extends StatelessWidget {
                 )
               ],
             )
+          ],
+        ));
+  }
+}
+
+class AntriContainer extends StatelessWidget {
+  const AntriContainer(
+      {Key? key,
+      this.isActive = false,
+      required this.hari,
+      required this.tanggal})
+      : super(key: key);
+
+  final bool isActive;
+  final String hari;
+  final String tanggal;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        height: 68,
+        width: 49,
+        decoration: BoxDecoration(
+            color: isActive ? Color(0xff9d9c62) : Colors.white,
+            borderRadius: BorderRadius.circular(15)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(hari,
+                style: TextStyle(color: Color(0xff333333), fontSize: 13)),
+            Text(tanggal,
+                style: TextStyle(color: Color(0xff333333), fontSize: 16))
           ],
         ));
   }
